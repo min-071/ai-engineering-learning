@@ -36,21 +36,3 @@ docker run --rm -it \
   ai-dev-mac \
   python app.py
 
-Port 5001 was used on the host because port 5000 was already in use on macOS.
-
-Technologies
-Docker
-Docker Compose
-Python
-PyTorch
-Flask
-Qdrant
-
-Then save:
-
-```text
-Ctrl + O
-Enter
-Ctrl + X
-
-

@@ -1,0 +1,34 @@
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    curl \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
+
+RUN python -m pip install --no-cache-dir \
+    torch \
+    torchvision \
+    torchaudio \
+    numpy \
+    pandas \
+    scikit-learn \
+    matplotlib \
+    jupyter \
+    transformers \
+    datasets \
+    accelerate \
+    safetensors \
+    flask
+
+WORKDIR /workspace
+
+EXPOSE 8888 5000
+
+CMD ["python"]
+
+
